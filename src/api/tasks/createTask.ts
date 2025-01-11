@@ -2,7 +2,7 @@ import { createRoute, RouteHandler, z } from '@hono/zod-openapi';
 import { CreateTaskSchema, TaskSchema } from '../../models/task';
 import { ErrorResponse } from '../../models/error';
 
-export const createTasksRoute = createRoute({
+export const createTaskRoute = createRoute({
   path: '/',
   method: 'post',
   description: '新たにタスクを登録します',
@@ -38,8 +38,8 @@ export const createTasksRoute = createRoute({
 type TaskSchema = z.infer<typeof TaskSchema>;
 type CreateTaskSchema = z.infer<typeof CreateTaskSchema>;
 
-export const createTasksHandler: RouteHandler<
-  typeof createTasksRoute,
+export const createTaskHandler: RouteHandler<
+  typeof createTaskRoute,
   {}
 > = async (c) => {
   try {
