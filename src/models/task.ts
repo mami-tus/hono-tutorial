@@ -15,7 +15,7 @@ export const TaskSchema = z
       example: false,
     }),
     priority: z.number().min(1).max(5).openapi({
-      example: 1,
+      example: 3,
     }), // タスクの優先度（1〜5）
   })
   .openapi('TaskSchema');
